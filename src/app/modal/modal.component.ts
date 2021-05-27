@@ -13,10 +13,17 @@ export class ModalComponent implements OnInit {
   @Input() updateContact: Contact;
   contact: Contact = new Contact();
   currentAddress: string = '';
+  tittle = ''
   constructor(public contactService: ContactsService) { }
   ngOnInit(): void {
 
-    this.updateContact ? this.contact = this.updateContact : this.contact;
+    if (this.updateContact) {
+      this.contact = this.updateContact
+      this.tittle = 'Update Contact'
+    }
+    else {
+      this.tittle = " Add Contact"
+    }
 
   }
 

@@ -10,7 +10,6 @@ export class ContactScreenComponent implements OnInit {
   constructor() { }
   search = ''
   ngOnInit(): void {
-    console.log(this.search);
 
   }
 

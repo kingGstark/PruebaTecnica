@@ -20,7 +20,7 @@
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <h5 class="modal-title" id="exampleModalLabel">{{ tittle }}</h5>
         <button
           type="button"
           class="btn-close"
@@ -85,7 +85,7 @@
 
             <div class="input-group mb-3">
               <span class="input-group-text" id="basic-addon1"
-                ><i class="fas fa-birthday-cake"></i
+                ><i class="fas fa-map-marked-alt"></i
               ></span>
               <input
                 type="text"
@@ -95,16 +95,41 @@
                 name="address"
                 #address="ngModel"
                 [(ngModel)]="currentAddress"
-              /><button (click)="addAdress()">add</button>
+              /><button class="btn btn-success" (click)="addAdress()">
+                add
+              </button>
             </div>
             <div>
-              <div
+              <table class="table m-auto">
+                <thead>
+                  <tr>
+                    <th scope="col">Address</th>
+                    <th scope="col">Name</th>
+                    <th scope="col m-auto">-</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let address of contact.address; index as index">
+                    <th scope="row">{{ index + 1 }}</th>
+                    <td>{{ address }}</td>
+                    <td>
+                      <button
+                        class="btn btn-danger"
+                        (click)="deleteAddress(index)"
+                      >
+                        <i class="fas fa-trash-alt"></i>
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <!-- <div
                 *ngFor="let address of this.contact.address; index as index"
                 class="address"
               >
                 {{ address }}
                 <button (click)="deleteAddress(index)">delete</button>
-              </div>
+              </div> -->
             </div>
           </form>
         </div>

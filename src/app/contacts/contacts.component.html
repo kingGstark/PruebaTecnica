@@ -1,35 +1,63 @@
 <div
-  class="container d-inline-block"
+  class="container-md d-flex"
   *ngIf="this.contactsService.contacts$ | async as contacts"
 >
   <div
     *ngFor="let contact of contacts | filter: this.term; index as id"
-    class="card shadow-sm p-3 mb-5 bg-body rounded"
-    style="width: 18rem"
+    class="card shadow-sm h6-3 mb-5 bg-body rounded"
+    style="width: 20rem"
   >
     <div class="head">
-      <div class="buttons float-end">
-        <div class="button delete" (click)="deleteContact(contact.id)">
+      <div class="buttons float-end mt-2">
+        <div class="btn btn-danger m-2" (click)="deleteContact(contact.id)">
           <i class="fas fa-user-times"></i>
         </div>
 
-        <div class="button edit" (click)="editContact()">
+        <div class="btn btn-warning m-2" (click)="editContact(contact)">
           <i class="fas fa-user-edit"></i>
         </div>
       </div>
     </div>
-    <!-- <img src="..." class="card-img-top" alt="..." /> -->
+    <img src="../../assets//icons/man.svg" class="card-img-top img" alt="..." />
     <div class="card-body">
-      <h5 class="card-title">{{ contact.fullName }}</h5>
-      <p class="card-text">Email:{{ contact.email }}</p>
-      <p class="card-text">age:{{ contact.age }}</p>
-      <p class="card-text">address:</p>
+      <h4 class="card-title">{{ contact.fullName }}</h4>
+      <h6 class="card-text fs-6">
+        <h5 class="fw-bold">Email:</h5>
+        {{ contact.email }}
+      </h6>
+      <h6 class="card-text flex-direction-row">
+        <h5>age:</h5>
+        {{ contact.age }}
+      </h6>
+      <h6 class="card-text"><h5 class="fw-bold">address:</h5></h6>
       <div class="address">
-        <p class="card-text" *ngFor="let address of contact.address">
-          {{ address }}
-        </p>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Address</th>
+              <th scope="col">Name</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let address of contact.address; index as index">
+              <th scope="row">{{ index + 1 }}</th>
+              <td>{{ address }}</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
-    <app-modal [updateContact]="contact" #content [mId]="id"></app-modal>
+    <app-modal
+      [updateContact]="contact"
+      #content
+      [mId]="contact.id"
+    ></app-modal>
   </div>
 </div>
+<!-- <div *ngIf="selectedContact">
+  <app-modal
+    [uh6dateContact]="selectedContact"
+    #content
+    [mId]="selectedContact.id"
+  ></app-modal>
+</div> -->
