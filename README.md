@@ -1,10 +1,10 @@
 # Prueba tecnica :computer:
 
-_Repositorio de proyecto de contactos, en el cual resolvemos el problema de guardar multiples direcciones por contacto_
+_Repositorio de proyecto de contactos en el cual resolvemos el problema de guardar multiples direcciones por contacto_
 
 ## Comenzando 🚀
 
-_Instalar dependencias haciendo uso de _ ```bash
+Instalar dependencias haciendo uso de  ```bash
 pip install 
 ``` 
 
