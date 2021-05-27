@@ -4,11 +4,10 @@ _Repositorio de proyecto de contactos en el cual resolvemos el problema de guard
 
 ## Comenzando 🚀
 
-Instalar dependencias haciendo uso de  ```bash
-pip install 
-``` 
+Instalar dependencias haciendo uso de  ```npm install```
+ 
 
-Mira **Deployment** para conocer como desplegar el proyecto.
+## Usa **ng serve** para  desplegar el proyecto.
 
 
 ### Pre-requisitos 📋
