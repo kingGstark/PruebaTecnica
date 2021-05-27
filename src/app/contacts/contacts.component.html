@@ -20,44 +20,34 @@
     </div>
     <img src="../../assets//icons/man.svg" class="card-img-top img" alt="..." />
     <div class="card-body">
-      <h4 class="card-title">{{ contact.fullName }}</h4>
+      <h4 class="card-title text-center">{{ contact.fullName }}</h4>
       <h6 class="card-text fs-6">
         <h5 class="fw-bold">Email:</h5>
-        {{ contact.email }}
+        <h6 class="m-auto">{{ contact.email }}</h6>
       </h6>
-      <h6 class="card-text flex-direction-row">
-        <h5>age:</h5>
-        {{ contact.age }}
+      <h6 class="card-text d-flex text-centered">
+        <h5 class="fw-bold">age:</h5>
+        <h6 class="mt-auto ml-2">{{ contact.age }}</h6>
       </h6>
       <h6 class="card-text"><h5 class="fw-bold">address:</h5></h6>
       <div class="address">
-        <table class="table">
-          <thead>
-            <tr>
-              <th scope="col">Address</th>
-              <th scope="col">Name</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let address of contact.address; index as index">
-              <th scope="row">{{ index + 1 }}</th>
-              <td>{{ address }}</td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="table-wrapper-scroll-y my-custom-scrollbar">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Address</th>
+                <th scope="col">Name</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let address of contact.address; index as index">
+                <th scope="row">{{ index + 1 }}</th>
+                <td>{{ address }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
-    <app-modal
-      [updateContact]="contact"
-      #content
-      [mId]="contact.id"
-    ></app-modal>
   </div>
 </div>
-<!-- <div *ngIf="selectedContact">
-  <app-modal
-    [uh6dateContact]="selectedContact"
-    #content
-    [mId]="selectedContact.id"
-  ></app-modal>
-</div> -->

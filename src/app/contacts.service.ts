@@ -28,7 +28,6 @@ export class ContactsService {
 
 
   createOrEdit(contact: Contact) {
-    console.log(contact);
     let contactInfo = {
       fullName: contact.fullName,
       email: contact.email,

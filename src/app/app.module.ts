@@ -14,6 +14,7 @@ import { ModalComponent } from './modal/modal.component';
 import { Pipe, PipeTransform } from '@angular/core';
 import * as $ from "jquery";
 import { FilterPipe } from './pipes/FilterPipe';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +29,8 @@ import { FilterPipe } from './pipes/FilterPipe';
     AngularFireModule.initializeApp(environment.firebaseConfig),
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    NgbModule
   ],
   providers: [ContactsService],
   bootstrap: [AppComponent]

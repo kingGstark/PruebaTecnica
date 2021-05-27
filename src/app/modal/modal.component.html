@@ -1,158 +1,133 @@
-<!-- <button
-  type="button"
-  class="btn btn-primary"
-  data-bs-toggle="modal"
-  data-bs-target="#exampleModal"
->
-  Launch demo modal
-</button> -->
-
-<!-- Modal -->
-<div
-  class="modal fade"
-  id="{{ 'exampleModal' + this.mId }}"
-  tabindex="-1"
-  aria-labelledby="exampleModalLabel"
-  aria-hidden="true"
-  target="modal"
-  #content
->
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">{{ tittle }}</h5>
-        <button
-          type="button"
-          class="btn-close"
-          data-bs-dismiss="modal"
-          aria-label="Close"
-        ></button>
-      </div>
-      <div class="modal-body">
-        <div class="mb-3">
-          <form #contactForm="ngForm">
-            <label for="fullName" class="form-label">FullName </label>
-            <div class="input-group mb-3">
-              <span class="input-group-text" id="basic-addon1"
-                ><i class="fas fa-signature"></i
-              ></span>
-              <input
-                type="text"
-                class="form-control"
-                id="{{ this.mId + 'fullName' }}"
-                [(ngModel)]="contact.fullName"
-                #fullName="ngModel"
-                placeholder="David harrison"
-                name="fullName"
-              />
-            </div>
-            <!-- <div
+<div>
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLabel">{{ tittle }}</h5>
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="modal"
+        aria-label="Close"
+        (click)="cleanModel()"
+      ></button>
+    </div>
+    <div class="modal-body">
+      <form #contactForm="ngForm">
+        <label for="fullName" class="form-label">FullName </label>
+        <div class="input-group">
+          <span class="input-group-text" id="basic-addon1"
+            ><i class="fas fa-signature"></i
+          ></span>
+          <input
+            type="text"
+            class="form-control"
+            id="{{ this.mId + 'fullName' }}"
+            [(ngModel)]="contact.fullName"
+            #fullName="ngModel"
+            placeholder="David harrison"
+            name="fullName"
+          />
+        </div>
+        <!-- <div
               [hidden]="!contact.fullName && fullName.untouched"
               class="alert alert-danger"
             ></div> -->
 
-            <label for="email" class="form-label">Email </label>
-            <div class="input-group mb-3">
-              <span class="input-group-text" id="basic-addon1">@</span>
-              <input
-                type="email"
-                class="form-control"
-                id="{{ this.mId + 'email' }}"
-                [(ngModel)]="contact.email"
-                #email="ngModel"
-                placeholder="name@example.com"
-                name="email"
-              />
-            </div>
-            <label for="email" class="form-label">Age </label>
+        <label for="email" class="form-label">Email </label>
+        <div class="input-group">
+          <span class="input-group-text" id="basic-addon1">@</span>
+          <input
+            type="email"
+            class="form-control"
+            id="{{ this.mId + 'email' }}"
+            [(ngModel)]="contact.email"
+            #email="ngModel"
+            placeholder="name@example.com"
+            name="email"
+          />
+        </div>
+        <label for="email" class="form-label">Age </label>
 
-            <div class="input-group mb-3">
-              <span class="input-group-text" id="basic-addon1"
-                ><i class="fas fa-birthday-cake"></i
-              ></span>
-              <input
-                type="text"
-                class="form-control"
-                id="{{ this.mId + 'age' }}"
-                [(ngModel)]="contact.age"
-                placeholder="David harrison"
-                name="age"
-                #age="ngModel"
-                [value]="this.contact.age"
-              />
-            </div>
-            <label for="email" class="form-label">Address </label>
+        <div class="input-group">
+          <span class="input-group-text" id="basic-addon1"
+            ><i class="fas fa-birthday-cake"></i
+          ></span>
+          <input
+            type="text"
+            class="form-control"
+            id="{{ this.mId + 'age' }}"
+            [(ngModel)]="contact.age"
+            placeholder="David harrison"
+            name="age"
+            #age="ngModel"
+            [value]="this.contact.age"
+          />
+        </div>
+        <label for="email" class="form-label">Address </label>
 
-            <div class="input-group mb-3">
-              <span class="input-group-text" id="basic-addon1"
-                ><i class="fas fa-map-marked-alt"></i
-              ></span>
-              <input
-                type="text"
-                class="form-control"
-                id="{{ this.mId + 'address' }}"
-                placeholder="santiago"
-                name="address"
-                #address="ngModel"
-                [(ngModel)]="currentAddress"
-              /><button class="btn btn-success" (click)="addAdress()">
-                add
-              </button>
-            </div>
-            <div>
-              <table class="table m-auto">
-                <thead>
-                  <tr>
-                    <th scope="col">Address</th>
-                    <th scope="col">Name</th>
-                    <th scope="col m-auto">-</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr *ngFor="let address of contact.address; index as index">
-                    <th scope="row">{{ index + 1 }}</th>
-                    <td>{{ address }}</td>
-                    <td>
-                      <button
-                        class="btn btn-danger"
-                        (click)="deleteAddress(index)"
-                      >
-                        <i class="fas fa-trash-alt"></i>
-                      </button>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-              <!-- <div
+        <div class="input-group">
+          <span class="input-group-text" id="basic-addon1"
+            ><i class="fas fa-map-marked-alt"></i
+          ></span>
+          <input
+            type="text"
+            class="form-control"
+            id="{{ this.mId + 'address' }}"
+            placeholder="santiago"
+            name="address"
+            #address="ngModel"
+            [(ngModel)]="currentAddress"
+          /><button class="btn btn-success" (click)="addAdress()">add</button>
+        </div>
+        <div class="table-wrapper-scroll-y my-custom-scrollbar">
+          <table class="table m-auto">
+            <thead>
+              <tr>
+                <th scope="col">Address</th>
+                <th scope="col">Name</th>
+                <th scope="col m-auto">-</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let address of contact.address; index as index">
+                <th scope="row">{{ index + 1 }}</th>
+                <td>{{ address }}</td>
+                <td>
+                  <button class="btn btn-danger" (click)="deleteAddress(index)">
+                    <i class="fas fa-trash-alt"></i>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- <div
                 *ngFor="let address of this.contact.address; index as index"
                 class="address"
               >
                 {{ address }}
                 <button (click)="deleteAddress(index)">delete</button>
               </div> -->
-            </div>
-          </form>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button
-          type="button"
-          class="btn btn-secondary"
-          data-bs-dismiss="modal"
-          (click)="cleanModel()"
-        >
-          Close
-        </button>
-        <button
-          type="button"
-          class="btn btn-primary"
-          data-bs-dismiss="modal"
-          (click)="addContact()"
-          [disabled]="!validateFields()"
-        >
-          Save changes
-        </button>
-      </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button
+        type="button"
+        class="btn btn-secondary"
+        data-bs-dismiss="modal"
+        (click)="cleanModel()"
+      >
+        Close
+      </button>
+      <button
+        type="button"
+        class="btn btn-primary"
+        data-bs-dismiss="modal"
+        (click)="addContact()"
+        [disabled]="!validateFields()"
+      >
+        Save changes
+      </button>
     </div>
   </div>
 </div>
+<!-- //</div> -->

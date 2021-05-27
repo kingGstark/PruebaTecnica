@@ -2,6 +2,8 @@ import { Component, Input, OnInit, TemplateRef, ViewChild } from '@angular/core'
 import { Contact } from '../_models/contact';
 import { NgForm } from '@angular/forms';
 import { ContactsService } from '../contacts.service';
+import { NgbModule, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+
 declare const $: any;
 @Component({
   selector: 'app-modal',
@@ -10,15 +12,18 @@ declare const $: any;
 })
 export class ModalComponent implements OnInit {
   @Input() mId: number;
-  @Input() updateContact: Contact;
+  //@Input() updateContact: Contact;
   contact: Contact = new Contact();
+  someInfo: string = '';
   currentAddress: string = '';
   tittle = ''
-  constructor(public contactService: ContactsService) { }
+  constructor(public contactService: ContactsService, private ngbActiveModal: NgbActiveModal) { }
+
   ngOnInit(): void {
 
-    if (this.updateContact) {
-      this.contact = this.updateContact
+    if (this.contact) {
+
+      this.contact = this.contact
       this.tittle = 'Update Contact'
     }
     else {
@@ -44,15 +49,13 @@ export class ModalComponent implements OnInit {
   deleteAddress(index: number) {
     this.contact.address.splice(index, 1);
   }
-  cleanModel() {
-    this.contact = new Contact();
-  }
-  openModal() {
 
-    $('#exampleModal' + this.mId).modal('show');
+  cleanModel() {
+    this.ngbActiveModal.close();
   }
 
   addContact() {
     this.contactService.createOrEdit(this.contact);
+    this.ngbActiveModal.close();
   }
 }

@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
+import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { ModalComponent } from '../modal/modal.component';
 
 @Component({
@@ -9,13 +10,14 @@ import { ModalComponent } from '../modal/modal.component';
 export class TopBarComponent implements OnInit {
   @ViewChild('content') content: ModalComponent;
   @Output() getValue = new EventEmitter();
-  constructor() { }
+  constructor(private ngBModal: NgbModal) { }
 
   ngOnInit(): void {
   }
 
   show() {
-    this.content.openModal()
+    const ngmodal: NgbModalRef = this.ngBModal.open(
+      ModalComponent);
   }
 
   change(value) {
