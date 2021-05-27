@@ -1,0 +1,40 @@
+<!-- <div class="search-bar">
+  <i class="icon fa fa-search"></i>
+  <input
+    class="input-text m-3"
+    type="text"
+    name="eingabe"
+    placeholder="Suche"
+  />
+  <button type="button" class="btn btn-success" (click)="show()">
+    <i class="fas fa-user-plus"></i>
+  </button>
+</div> -->
+<app-modal #content></app-modal>
+
+<nav class="navbar navbar-light bg-light">
+  <div class="container">
+    <a class="navbar-brand text" href="#">
+      <img
+        src="../../assets//icons/phonebook.svg"
+        alt=""
+        width="30"
+        class="img d-inline-block align-text-center"
+      />
+      ContactsList
+    </a>
+    <div>
+      <i class="icon fa fa-search"></i>
+      <input
+        class="input-text m-3"
+        type="text"
+        name="name"
+        placeholder="Maria carmen"
+        (input)="change($event.target.value)"
+      />
+      <button type="button" class="btn btn-success" (click)="show()">
+        <i class="fas fa-user-plus"></i>
+      </button>
+    </div>
+  </div>
+</nav>

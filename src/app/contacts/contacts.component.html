@@ -1,0 +1,35 @@
+<div
+  class="container d-inline-block"
+  *ngIf="this.contactsService.contacts$ | async as contacts"
+>
+  <div
+    *ngFor="let contact of contacts | filter: this.term; index as id"
+    class="card shadow-sm p-3 mb-5 bg-body rounded"
+    style="width: 18rem"
+  >
+    <div class="head">
+      <div class="buttons float-end">
+        <div class="button delete" (click)="deleteContact(contact.id)">
+          <i class="fas fa-user-times"></i>
+        </div>
+
+        <div class="button edit" (click)="editContact()">
+          <i class="fas fa-user-edit"></i>
+        </div>
+      </div>
+    </div>
+    <!-- <img src="..." class="card-img-top" alt="..." /> -->
+    <div class="card-body">
+      <h5 class="card-title">{{ contact.fullName }}</h5>
+      <p class="card-text">Email:{{ contact.email }}</p>
+      <p class="card-text">age:{{ contact.age }}</p>
+      <p class="card-text">address:</p>
+      <div class="address">
+        <p class="card-text" *ngFor="let address of contact.address">
+          {{ address }}
+        </p>
+      </div>
+    </div>
+    <app-modal [updateContact]="contact" #content [mId]="id"></app-modal>
+  </div>
+</div>
