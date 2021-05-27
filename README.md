@@ -7,13 +7,11 @@ _Repositorio de proyecto de contactos en el cual resolvemos el problema de guard
 Instalar dependencias haciendo uso de  ```npm install```
  
 
-## Usa **ng serve** para  desplegar el proyecto.
+### Usa **ng serve** para  desplegar el proyecto.
 
 
 ### Pre-requisitos 📋
 
-_Que cosas necesitas para instalar el software y como instalarlas_
+Se requiere versión 11.1.0 de angular cli
 
-```
-Da un ejemplo
-```
+```npm i @angular/cli```
