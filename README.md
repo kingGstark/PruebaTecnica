@@ -12,6 +12,6 @@ Instalar dependencias haciendo uso de  ```npm install```
 
 ### Pre-requisitos 📋
 
-Se requiere versión 11.1.0 de angular cli
+Se requiere versión 11.1.0 de angular cli o versión compatible
 
 ```npm i @angular/cli```
