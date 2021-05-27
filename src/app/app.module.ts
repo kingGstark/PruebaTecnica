@@ -9,12 +9,12 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { ContactsComponent } from './contacts/contacts.component';
 import { ContactScreenComponent } from './contact-screen/contact-screen.component';
-import { ContactsService } from './contacts.service';
 import { ModalComponent } from './modal/modal.component';
 import { Pipe, PipeTransform } from '@angular/core';
 import * as $ from "jquery";
 import { FilterPipe } from './pipes/FilterPipe';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ContactsService } from './contacts.service';
 @NgModule({
   declarations: [
     AppComponent,

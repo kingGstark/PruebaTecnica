@@ -16,6 +16,7 @@ export class TopBarComponent implements OnInit {
   }
 
   show() {
+    //creating modal
     const ngmodal: NgbModalRef = this.ngBModal.open(
       ModalComponent);
   }

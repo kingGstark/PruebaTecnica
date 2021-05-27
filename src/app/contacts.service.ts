@@ -13,6 +13,7 @@ export class ContactsService {
   contactRef = this.Db.collection<Contact>('Contacts');
 
   constructor(public Db: AngularFirestore) {
+    //getting observable to get the data
     this.contacts$ = this.contactRef.snapshotChanges().pipe(
       map(contacts => contacts.map(
         contact => {

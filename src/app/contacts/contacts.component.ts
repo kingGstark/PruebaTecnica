@@ -22,15 +22,18 @@ export class ContactsComponent implements OnInit {
 
   editContact(contact: any) {
 
+    //creating modal
+
     const ngmodal: NgbModalRef = this.ngBModal.open(
       ModalComponent);
 
     ngmodal.componentInstance.contact = _.cloneDeep(contact);
 
-    // ejemplo de resultado al cerrar modal
+
 
   }
   deleteContact(contactId) {
+    //deleteing a contact
     this.contactsService.delete(contactId)
   }
 }

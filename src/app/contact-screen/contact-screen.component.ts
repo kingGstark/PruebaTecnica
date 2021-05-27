@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class ContactScreenComponent implements OnInit {
 
   constructor() { }
+  //variable to filter
   search = ''
   ngOnInit(): void {
 
