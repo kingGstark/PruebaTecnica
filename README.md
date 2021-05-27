@@ -1,27 +1,20 @@
-# OrionTekTest
+# Prueba tecnica :computer:
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.1.0.
+_Repositorio de proyecto de contactos, en el cual resolvemos el problema de guardar multiples direcciones por contacto_
 
-## Development server
+## Comenzando 🚀
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+_Instalar dependencias haciendo uso de ```bash
+pip install 
+``` _
 
-## Code scaffolding
+Mira **Deployment** para conocer como desplegar el proyecto.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+### Pre-requisitos 📋
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+_Que cosas necesitas para instalar el software y como instalarlas_
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```
+Da un ejemplo
+```
