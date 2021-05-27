@@ -4,9 +4,9 @@ _Repositorio de proyecto de contactos, en el cual resolvemos el problema de guar
 
 ## Comenzando 🚀
 
-_Instalar dependencias haciendo uso de ```bash
+_Instalar dependencias haciendo uso de _ ```bash
 pip install 
-``` _
+``` 
 
 Mira **Deployment** para conocer como desplegar el proyecto.
 
