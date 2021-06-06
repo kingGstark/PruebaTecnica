@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { concat, Observable } from 'rxjs';
-import { Contact } from './_models/contact';
 import { map } from "rxjs/operators";
+import { Contact } from '../_models/contact';
 
 @Injectable({
   providedIn: 'root'

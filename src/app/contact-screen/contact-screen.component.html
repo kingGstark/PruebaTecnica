@@ -1,3 +1,57 @@
 <app-top-bar (getValue)="this.search = $event"></app-top-bar>
-
-<app-contacts [term]="this.search"></app-contacts>
+<div *ngIf="auth.user$ | async; then authenticated; else guest"></div>
+<ng-template #authenticated>
+  <div *ngIf="auth.user$ | async as user">
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button
+          class="nav-link active"
+          id="home-tab"
+          data-bs-toggle="tab"
+          data-bs-target="#home"
+          type="button"
+          role="tab"
+          aria-controls="home"
+          aria-selected="true"
+        >
+          <i class="fa fa-home"></i> Home
+        </button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button
+          class="nav-link"
+          id="profile-tab"
+          data-bs-toggle="tab"
+          data-bs-target="#profile"
+          type="button"
+          role="tab"
+          aria-controls="profile"
+          aria-selected="false"
+        >
+          <i class="fa fa-users"></i> General chat
+        </button>
+      </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+      <div
+        class="tab-pane fade show active"
+        id="home"
+        role="tabpanel"
+        aria-labelledby="home-tab"
+      >
+        <app-contacts [term]="this.search"></app-contacts>
+      </div>
+      <div
+        class="tab-pane fade"
+        id="profile"
+        role="tabpanel"
+        aria-labelledby="profile-tab"
+      >
+        <app-chat></app-chat>
+      </div>
+    </div>
+  </div>
+</ng-template>
+<ng-template #guest>
+  <app-contacts [term]="this.search"></app-contacts>
+</ng-template>

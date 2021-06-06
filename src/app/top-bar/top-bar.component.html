@@ -36,4 +36,31 @@
       </button>
     </div>
   </div>
+  <div *ngIf="auth.user$ | async; then authenticated; else guest"></div>
+  <ng-template #authenticated>
+    <div *ngIf="auth.user$ | async as user">
+      <div class="userInfo grid">
+        <div class="row profileInfo">
+          <div class="col">
+            <img
+              [src]="user.photoURL"
+              class="rounded float-right profileImg"
+              alt="..."
+            />
+          </div>
+          <div class="col">
+            <h6 class="ma-1">{{ user.displayName }}</h6>
+            <div class="btn btn-danger logOut" (click)="auth.signOut()">
+              <div class="text-center">log out</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+  <ng-template #guest>
+    <div class="btn btn-primary" (click)="this.auth.googleSignin()">
+      <i class="fa fa-google"> sign in </i>
+    </div>
+  </ng-template>
 </nav>

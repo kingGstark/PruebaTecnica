@@ -1,0 +1,54 @@
+<div class="card">
+  <div class="card-header">Chat</div>
+  <div class="card-body height3" *ngIf="chat.Messages$ | async as messages">
+    <ul class="chat-list">
+      <div *ngFor="let message of messages">
+        <div
+          *ngIf="
+            message.uid == auth.user.uid;
+            then myMessage;
+            else otherMessage
+          "
+        ></div>
+
+        <ng-template #myMessage>
+          <div></div>
+          <li class="in">
+            <div class="chat-img">
+              <img alt="Avtar" [src]="auth.user.photoURL" />
+            </div>
+            <div class="chat-body">
+              <div class="chat-message">
+                <h5>{{ auth.user.displayName }}</h5>
+                <p>{{ message.text }}</p>
+              </div>
+            </div>
+          </li>
+        </ng-template>
+
+        <ng-template #otherMessage>
+          <li class="out">
+            <div class="chat-img">
+              <img alt="Avtar" [src]="this.getUserData(message.uid).photoURL" />
+            </div>
+            <div class="chat-body">
+              <div class="chat-message">
+                <h5>{{ this.getUserData(message.uid).displayName }}</h5>
+                <p>{{ message.text }}</p>
+              </div>
+            </div>
+          </li>
+        </ng-template>
+      </div>
+    </ul>
+  </div>
+  <div class="card-footer float-right">
+    <div class="float-right">
+      <input type="text" name="messageText" [(ngModel)]="messageText" />
+      <div class="btn btn-primary m-1" (click)="sendMessage()">
+        <i class="fa fa-send"></i>
+        enviar
+      </div>
+    </div>
+  </div>
+</div>

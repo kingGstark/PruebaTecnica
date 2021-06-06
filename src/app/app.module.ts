@@ -14,7 +14,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 import * as $ from "jquery";
 import { FilterPipe } from './pipes/FilterPipe';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { ContactsService } from './contacts.service';
+import { ChatComponent } from './chat/chat.component';
+import { ContactsService } from './_services/contacts.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +23,8 @@ import { ContactsService } from './contacts.service';
     ContactsComponent,
     ContactScreenComponent,
     ModalComponent,
-    FilterPipe
+    FilterPipe,
+    ChatComponent
   ],
   imports: [
     AngularFirestoreModule,
@@ -30,7 +32,7 @@ import { ContactsService } from './contacts.service';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    NgbModule
+    NgbModule,
   ],
   providers: [ContactsService],
   bootstrap: [AppComponent]

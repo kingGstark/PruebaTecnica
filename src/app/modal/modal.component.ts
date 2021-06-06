@@ -1,8 +1,8 @@
 import { Component, Input, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { Contact } from '../_models/contact';
 import { NgForm } from '@angular/forms';
-import { ContactsService } from '../contacts.service';
 import { NgbModule, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { ContactsService } from '../_services/contacts.service';
 
 declare const $: any;
 @Component({
