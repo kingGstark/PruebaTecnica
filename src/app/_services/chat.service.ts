@@ -40,6 +40,13 @@ export class ChatService {
     console.log('done')
   }
 
-
+deleteMessage(message){
+this.MessageRef.doc(message.id).set(
+  {
+    uid:message.uid,
+    messageDate:message.messageDate
+  }
+)
+}
 
 }

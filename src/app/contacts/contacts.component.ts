@@ -33,7 +33,6 @@ export class ContactsComponent implements OnInit {
 
   }
   deleteContact(contactId) {
-    //deleteing a contact
     this.contactsService.delete(contactId)
   }
 }

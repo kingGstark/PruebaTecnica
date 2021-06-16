@@ -77,6 +77,13 @@ body {
   text-align: right;
 }
 
+.chat-list .in .chat-body {
+  float: left;
+  margin-left: 20px;
+  text-align: left;
+  cursor: pointer;
+}
+
 .chat-list .out .chat-message {
   background: #fc6d4c;
 }
@@ -109,4 +116,23 @@ body {
 .content {
   height: 100%;
   width: 100%;
+}
+
+.messageOptions {
+  background: #F4F4F9 !important;
+  color: rgba(0, 0, 0, 0.185)  !important;
+}
+.messageOptions:before {
+  left: -12px;
+  border-bottom: 20px solid transparent;
+  border-right: 20px solid #F4F4F9 !important;
+}
+
+.my-custom-scrollbar {
+  position: relative;
+  height: 600px;
+  overflow: auto;
+}
+.table-wrapper-scroll-y {
+  display: block;
 }

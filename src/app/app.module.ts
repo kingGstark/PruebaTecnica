@@ -12,10 +12,13 @@ import { ContactScreenComponent } from './contact-screen/contact-screen.componen
 import { ModalComponent } from './modal/modal.component';
 import { Pipe, PipeTransform } from '@angular/core';
 import * as $ from "jquery";
+import {HttpClientModule} from '@angular/common/http'
 import { FilterPipe } from './pipes/FilterPipe';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ChatComponent } from './chat/chat.component';
 import { ContactsService } from './_services/contacts.service';
+import { clickOutsideDirective } from './_directives/clickOutsideDirective';
+import { GeoLocationComponent } from './geo-location/geo-location.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,12 +27,15 @@ import { ContactsService } from './_services/contacts.service';
     ContactScreenComponent,
     ModalComponent,
     FilterPipe,
-    ChatComponent
+    ChatComponent,
+    clickOutsideDirective,
+    GeoLocationComponent
   ],
   imports: [
     AngularFirestoreModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     FormsModule,
     NgbModule,

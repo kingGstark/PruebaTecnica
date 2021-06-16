@@ -11,6 +11,9 @@ export const environment = {
     storageBucket: "oriontek-e6124.appspot.com",
     messagingSenderId: "342673379429",
     appId: "1:342673379429:web:5870c2e3a55e52965b368c"
+  },
+  mapboxgl:{
+    accessToken:"pk.eyJ1Ijoia2luZ2dzdGFyayIsImEiOiJja212MGlza3gwMGg4MndvM2dremZ6MWZrIn0.SVRxd-y3oeejZ_OWsXoILg"
   }
 
 };
